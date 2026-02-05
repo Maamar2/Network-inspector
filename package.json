@@ -1,0 +1,51 @@
+{
+  "name": "network-inspector",
+  "version": "1.0.0",
+  "description": "A powerful network traffic capture and analysis tool with MITM proxy and native desktop interface",
+  "private": true,
+  "workspaces": [
+    "proxy",
+    "dashboard"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:proxy\" \"npm run dev:dashboard\"",
+    "dev:proxy": "cd proxy && npm run dev",
+    "dev:dashboard": "cd dashboard && npm run dev",
+    "dev:desktop": "cd dashboard && npm run tauri:dev",
+    "build": "npm run build:proxy && npm run build:dashboard",
+    "build:proxy": "cd proxy && npm run build",
+    "build:dashboard": "cd dashboard && npm run build",
+    "build:desktop": "cd dashboard && npm run tauri:build",
+    "test": "npm run test:proxy && npm run test:dashboard",
+    "test:proxy": "cd proxy && npm test",
+    "test:dashboard": "cd dashboard && npm test",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+  },
+  "keywords": [
+    "network-inspector",
+    "proxy",
+    "mitm",
+    "http",
+    "https",
+    "traffic-analysis",
+    "network-monitoring",
+    "desktop-app",
+    "tauri",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maamar2/network-inspector.git"
+  },
+  "author": "Maamar Hafsaoui",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

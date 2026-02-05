@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Method badges */
+.method-badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold uppercase tracking-wide;
+}
+
+.method-get { @apply bg-blue-500/20 text-blue-400; }
+.method-post { @apply bg-green-500/20 text-green-400; }
+.method-put { @apply bg-yellow-500/20 text-yellow-400; }
+.method-delete { @apply bg-red-500/20 text-red-400; }
+.method-patch { @apply bg-purple-500/20 text-purple-400; }
+.method-head { @apply bg-gray-500/20 text-gray-400; }
+.method-options { @apply bg-slate-500/20 text-slate-400; }
+
+/* Status badges */
+.status-badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold;
+}
+
+.status-2xx { @apply bg-green-500/20 text-green-400; }
+.status-3xx { @apply bg-yellow-500/20 text-yellow-400; }
+.status-4xx { @apply bg-red-500/20 text-red-400; }
+.status-5xx { @apply bg-red-600/20 text-red-500; }
+.status-0 { @apply bg-gray-500/20 text-gray-400; }
+
+/* Code block */
+.code-block {
+  @apply font-mono text-sm bg-dark-900 p-4 rounded overflow-auto;
+}
+
+/* JSON syntax highlighting */
+.json-key { @apply text-purple-400; }
+.json-string { @apply text-green-400; }
+.json-number { @apply text-yellow-400; }
+.json-boolean { @apply text-blue-400; }
+.json-null { @apply text-gray-400; }
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* Focus styles */
+input:focus, select:focus, textarea:focus {
+  @apply outline-none ring-2 ring-primary-500 ring-opacity-50;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500/30;
+}
